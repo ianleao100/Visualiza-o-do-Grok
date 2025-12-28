@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeliveryMaster AI</title>
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,1&display=swap" rel="stylesheet" />
+    
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Tailwind CSS and Config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class", 
+        theme: {
+          extend: {
+            colors: {
+              primary: "#EA2831", 
+              "background-light": "#f8f6f6", 
+              "background-dark": "#211111", 
+              "surface-light": "#ffffff", 
+              "surface-dark": "#1e1b2e"
+            }, 
+            fontFamily: {
+              display: "Plus Jakarta Sans"
+            }, 
+            borderRadius: {
+              DEFAULT: "0.25rem", 
+              lg: "0.5rem", 
+              xl: "0.75rem", 
+              full: "9999px"
+            },
+            // Forçar cor do anel de foco globalmente
+            ringColor: {
+              DEFAULT: "#EA2831",
+              primary: "#EA2831"
+            }
+          }
+        }
+      };
+    </script>
+    
+    <style>
+      /* Hide scrollbar globally but keep functionality */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      html, body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      body {
+        min-height: 100dvh;
+      }
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+      }
+      .animate-marquee {
+        animation: marquee 25s linear infinite;
+      }
+      /* Leaflet Z-Index Fix for Sticky Headers */
+      .leaflet-pane {
+        z-index: 10 !important;
+      }
+      .leaflet-top, .leaflet-bottom {
+        z-index: 20 !important;
+      }
+
+      /* Global Focus Override - Remove Blue Rings */
+      *:focus {
+        outline: none !important;
+        --tw-ring-color: #EA2831 !important;
+      }
+      input:focus, textarea:focus, select:focus {
+        border-color: #EA2831 !important;
+        --tw-ring-color: #EA2831 !important;
+        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light dark:bg-background-dark font-display text-[#121118] dark:text-gray-100 antialiased selection:bg-primary selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>

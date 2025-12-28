@@ -1,0 +1,7 @@
+{
+  "name": "124 AppFood - Melhorias Grok",
+  "description": "A complete delivery solution with distinct Client, Professional, and Admin portals, enhanced with Gemini AI for content and image generation.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
